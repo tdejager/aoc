@@ -4,6 +4,7 @@ defmodule Mix.Tasks.D01.P1 do
   import AdventOfCode.Day01
 
   @shortdoc "Day 01 Part 1"
+  @spec run(any) :: any
   def run(args) do
     input = AdventOfCode.Input.get!(1, 2022)
 

@@ -13,6 +13,7 @@ defmodule AdventOfCode.Input do
   cache, it will be retrieved from the server if `allow_network?: true` is
   configured and your cookie is setup.
   """
+  @spec get!(any(), any()) :: bitstring()
   def get!(day, year \\ nil)
   def get!(day, nil), do: get!(day, default_year())
 
@@ -84,7 +85,8 @@ defmodule AdventOfCode.Input do
 
   defp headers,
     do: [
-      {'user-agent', 'github.com/mhanberg/advent-of-code-elixir-starter by aoc@mitchellhanberg.com'},
+      {'user-agent',
+       'github.com/mhanberg/advent-of-code-elixir-starter by aoc@mitchellhanberg.com'},
       {'cookie', String.to_charlist("session=" <> Keyword.get(config(), :session_cookie))}
     ]
 end
